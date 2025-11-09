@@ -12,7 +12,54 @@
  7. Docker conteinerization
  8. Thunder Client  or REST Client for Testing Apis
 
- ### Environment Setup
- #### checking installation 
- run ` python --version
+ ### Python Environment Setup Guide
 
+ #### Check Python Version (Need 3.9+)
+
+  ```bash
+  python --version
+  # or
+  python3 --version
+
+  ```
+ #### Create virtual environment
+
+  ```bash
+  python -m venv venv
+  ```
+ #### Activate the virtual environment
+ 1. Windows:
+  ```bash
+  venv\Scripts\activate
+   ```
+ 2. Mac or Linux:
+  ```bash
+  source venv/bin/activate
+  ```
+ #### Install tools 
+ ```bash
+ pip install (package name,pname,pname) ie django
+  ```
+
+ #### Dependencies
+ 1. save dependencies to file
+   ```bash 
+   pip freeze > requirements.txt
+    ```
+ 2. Install from requirements.txt
+   ```bash
+   pip install -r requirements.txt
+    ```
+ #### Deactivate environment
+    ```bash
+    deactivate
+    ```
+ #### Check installed packages
+    ```bash
+    pip list
+    ```
+
+
+
+
+ 
