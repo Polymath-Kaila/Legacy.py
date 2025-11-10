@@ -50,15 +50,88 @@
    ```bash
    pip install -r requirements.txt
     ```
+    ---------------------------------
  #### Deactivate environment
     ```bash
     deactivate
     ```
+    ----------------------------------
  #### Check installed packages
     ```bash
     pip list
     ```
+--------------------------------------
 
+### Initial Setup Commands
+   1. create project folder
+
+    ```bash
+     mkdir project name
+    ```
+    2. change directory into it
+
+      ```bash
+      cd project name
+      ```
+    3. create virtual env
+      ```bash
+      python -m venv venv
+      ```
+    4. Activate it 
+      ```bash
+      source venv/bin/activate
+      ```
+    5. create folder structure
+
+    clinic-backend/
+│
+├── src/
+│   ├── __init__.py
+│   │
+│   ├── config/
+│   │   ├── __init__.py
+│   │   └── settings.py        # env & constants loader
+│   │
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── exceptions.py      # custom app exceptions
+│   │   └── logger.py          # basic logging setup
+│   │
+│   ├── domain/                # pure OOP business entities
+│   │   ├── __init__.py
+│   │   ├── patient.py
+│   │   ├── doctor.py
+│   │   └── appointment.py
+│   │
+│   ├── repositories/          # DB access layer
+│   │   ├── __init__.py
+│   │   ├── base_repo.py       # abstract base repo (interfaces)
+│   │   └── appointment_repo.py
+│   │
+│   ├── services/              # business logic layer
+│   │   ├── __init__.py
+│   │   └── scheduling_service.py
+│   │
+│   ├── api/                   # REST-like layer
+│   │   ├── __init__.py
+│   │   ├── controllers.py     # request handlers
+│   │   └── routes.py          # endpoint mapping
+│   │
+│   ├── db/
+│   │   ├── __init__.py
+│   │   └── connection.py      # DB connection pool (psycopg2 / placeholder)
+│   │
+│   └── app.py                 # entrypoint – wires config, DB, and routes
+│
+├── tests/
+│   └── test_scheduling_service.py
+│
+├── .env                       # local environment vars
+├── requirements.txt
+├── main.py                    # starts the app (calls src.app)
+└── README.md
+
+    
 
 
 
